@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+<!--  Handler-Mapping -->
+<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+	<property name="mappings">
+	<props>
+	<prop key="home.htm">pvc1</prop>
+	<prop key="wish.htm">wmgc</prop>
+	<prop key="aboutUs.htm">pvc2</prop>
+	<prop key="contactUs.htm">pvc3</prop>
+	
+	</props>
+	</property>
+</bean>
+
+<!--  Controllers -->
+<bean id="pvc1" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+<property name="viewName" value="welcome"/>
+</bean>
+<bean id="wmgc" class="com.vijay.controllers.WishMessageGeneratorController"/>
+<bean id="pvc2" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+<property name="viewName" value="show_about_us"/>
+</bean>
+<bean id="pvc3" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+<property name="viewName" value="show_contact_us"></property>
+</bean>
+
+
+
+<!-- ViewResolver -->
+<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+<property name="prefix" value="/WEB-INF/pages/"/>
+<property name="suffix" value=".jsp"></property>
+</bean>
+
+
+</beans>
