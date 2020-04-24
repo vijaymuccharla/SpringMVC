@@ -1,0 +1,2 @@
+create table corona_patient(patId int(10) primary key AUTO INCREMENT,
+patName varchar(20),patAge int(10)location varchar(20),hostpital varchar(20));
