@@ -8,10 +8,11 @@
 </head>
 <body>
 <div align="center">
+<br/><br/><br/><br/>
+<h1 style="color:orange;"> Registration Status Page </h1><br/>
+<h2><b>Result  :: ${resMsg }</b></h2><br/>
 
-<b>Result  :: ${resMsg }</b><br/>
-
-<a href="corona.htm"> Home </a>
+<h3><a href="corona.htm"> Home </a></h3>
 
 </div>
 </body>

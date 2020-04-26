@@ -2,11 +2,24 @@
 	pageEncoding="ISO-8859-1" isELIgnored="false"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
-
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title> Registration </title>
+</head>
+<style>
+table, tr, th, td {
+	boder: 2px;
+	border-collapse: collapse;
+	background-color: lightgreen;
+	padding: 10px;
+	text-align: center;
+}
+</style>
 
 <body>
 	<div align="center">
-		<h1 sytle="color:red">Corona Patient Regsitration Form</h1>
+		<h1 style="color:green;">Corona Patient Registration Form</h1>
 		<form:form modelAttribute="patCmd">
 			<table>
 				<tr>
@@ -45,3 +58,4 @@
 
 
 </body>
+</html>

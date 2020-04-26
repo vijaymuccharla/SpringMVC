@@ -1,14 +1,14 @@
 package com.vj.command;
 
 public class PatientCommand {
-
+	
 	private String patName;
 	private Integer patAge;
 	private String location;
 	private String hospital;
 	
 	public PatientCommand() {
-		System.out.println("PatientCommand.0-PAram contructor");
+		System.out.println("PatientCommand.0-Param contructor");
 	}
 	
 	public String getPatName() {
