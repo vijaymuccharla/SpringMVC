@@ -30,7 +30,7 @@ public class PatientOperationsController {
 	private PatientCommandValidator validator;
 
 	//for giving only one PatientCommand object per session
-	@ModelAttribute("patCmd")
+	@ModelAttribute("patCmd")		//initial request wrapping
 	public PatientCommand getPatCmd() {
 		System.out.println("PatientOperationsController.getPatCmd()");
 		return new PatientCommand();
@@ -47,7 +47,7 @@ public class PatientOperationsController {
 			
 	}
 	
-	@PostMapping("/corona.htm")
+	@PostMapping("/corona.htm")		//post back request
 	public String registerForm(Map<String,Object> map,
 				@ModelAttribute("patCmd") PatientCommand cmd,
 				BindingResult br) {
@@ -64,6 +64,11 @@ public class PatientOperationsController {
 			validator.validate(cmd, br);			
 			if(br.hasErrors())
 				return "patient_registration";
+		}
+		
+		if(cmd.getLocation().equalsIgnoreCase("hyd") || cmd.getLocation().equalsIgnoreCase("HYD") || cmd.getLocation().equalsIgnoreCase("hyderabad") || cmd.getLocation().equalsIgnoreCase("Hdearabad")) {
+			br.rejectValue("location", "loc.blocked");
+			return "patient_registration";
 		}
 		
 		//convert cmd to DTO
